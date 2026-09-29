@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bgfdrebr25el5"]
+
+[ext_resource type="Texture2D" uid="uid://y128c47pgipn" path="res://assets/TEXTURE.png" id="1_4dp6j"]
+[ext_resource type="PackedScene" uid="uid://dypl2xr1vbea4" path="res://ethandows.tscn" id="2_h4ipl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8v58w"]
+albedo_texture = ExtResource("1_4dp6j")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_qmwgw"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4dp6j"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_qmwgw")
+uv2_scale = Vector3(-1, -1, -1)
+
+[node name="Computer" type="Node3D" unique_id=2421823]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1043986911]
+use_collision = true
+material = SubResource("StandardMaterial3D_8v58w")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1978379275]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6830099, 0)
+use_collision = true
+size = Vector3(1, 0.1899414, 1)
+material = SubResource("StandardMaterial3D_8v58w")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=370698294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.59324265, -0.04711914)
+use_collision = true
+size = Vector3(1, 0.1899414, 0.9057617)
+material = SubResource("StandardMaterial3D_8v58w")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=2054205360]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43725586, -0.54665405, 0)
+use_collision = true
+size = Vector3(0.12548828, 0.09289551, 1)
+material = SubResource("StandardMaterial3D_8v58w")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1133830460]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4365387, -0.54665405, 0)
+use_collision = true
+size = Vector3(0.12548828, 0.09289551, 1)
+material = SubResource("StandardMaterial3D_8v58w")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=1272217810]
+transform = Transform3D(1, -8.742278e-08, -8.742278e-08, -8.742278e-08, -1, 0, -8.742278e-08, 7.642742e-15, -1, 0, 0, 0.5050181)
+use_collision = true
+size = Vector3(0.7890625, 0.84277344, 0.001)
+material = SubResource("StandardMaterial3D_4dp6j")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=769328316]
+size = Vector2i(1152, 720)
+
+[node name="Control" parent="SubViewport" unique_id=1676533045 instance=ExtResource("2_h4ipl")]
