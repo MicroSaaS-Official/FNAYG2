@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bc3a7g5ocbi2c"]
+
+[ext_resource type="PackedScene" uid="uid://cjk3x5adgjolh" path="res://assets/models/Jakob.tscn" id="1_h48mh"]
+[ext_resource type="Script" uid="uid://ui6koviiamr1" path="res://scripts/jakobanimatronic.gd" id="1_vv7oe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8v58w"]
+size = Vector3(1, 0.4650879, 0.7338867)
+
+[node name="Jakobanimatronic" type="CharacterBody3D" unique_id=73307158]
+script = ExtResource("1_vv7oe")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=278842291]
+transform = Transform3D(0.29960784, 0, 0, 0, 1.5, 0, 0, 0, -0.74241245, 0, 0.40118408, -0.098782904)
+shape = SubResource("BoxShape3D_8v58w")
+
+[node name="Mutant Run" parent="." unique_id=626722951 instance=ExtResource("1_h48mh")]
+transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, 0, 0, 0)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=659477424]
+
+[node name="JumpscareArea" type="Area3D" parent="." unique_id=873813950]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="JumpscareArea" unique_id=1263067763]
+transform = Transform3D(1.6112545, 0, 0, 0, 1.5, 0, 0, 0, 1.5870845, 0, 0.40118408, 0)
+shape = SubResource("BoxShape3D_8v58w")
+
+[connection signal="body_entered" from="JumpscareArea" to="." method="_on_jumpscare_area_body_entered"]

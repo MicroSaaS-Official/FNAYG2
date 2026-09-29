@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://dypl2xr1vbea4"]
+
+[ext_resource type="Texture2D" uid="uid://b3fh44mlx54fo" path="res://assets/62DE.png" id="3_e8kgp"]
+[ext_resource type="Shader" uid="uid://dhhjumbbvi4mb" path="res://assets/TITLE2.gdshader" id="3_ts42v"]
+[ext_resource type="Shader" uid="uid://cu35y7yprewbp" path="res://assets/TITLE.gdshader" id="4_8i251"]
+[ext_resource type="AudioStream" uid="uid://umem1hqnvd6b" path="res://music/Ethandows 26 Startup.mp3" id="4_e8kgp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ndwfu"]
+shader = ExtResource("4_8i251")
+shader_parameter/vhs_resolution = Vector2(320, 240)
+shader_parameter/samples = 2
+shader_parameter/crease_noise = 1.0
+shader_parameter/crease_opacity = 0.5
+shader_parameter/filter_intensity = 0.1
+shader_parameter/tape_crease_smear = 0.2
+shader_parameter/tape_crease_intensity = 0.2
+shader_parameter/tape_crease_jitter = 0.1
+shader_parameter/tape_crease_speed = 0.5
+shader_parameter/tape_crease_discoloration = 1.0
+shader_parameter/bottom_border_thickness = 6.0
+shader_parameter/bottom_border_jitter = 6.0
+shader_parameter/noise_intensity = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hfvvy"]
+shader = ExtResource("3_ts42v")
+shader_parameter/scanlines_1 = 500.0
+shader_parameter/scanlines_2 = 25.0
+shader_parameter/scan_reduction = 0.1
+shader_parameter/vinnette_alpla = 1.0
+shader_parameter/vinnette_inner_radius = 0.0
+shader_parameter/vinnette_outer_radius = 1.0
+
+[node name="Control" type="Control" unique_id=1676533045]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1521591335]
+visible = false
+material = SubResource("ShaderMaterial_ndwfu")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1101867370]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=291619420]
+offset_right = 1280.0
+offset_bottom = 720.0
+scale = Vector2(0.9072502, 0.89964217)
+texture = ExtResource("3_e8kgp")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer" unique_id=1513836151]
+offset_left = 4.0
+offset_right = 1284.0
+offset_bottom = 720.0
+scale = Vector2(0.9072502, 0.89964217)
+texture = ExtResource("3_e8kgp")
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer" unique_id=268337433]
+material = SubResource("ShaderMaterial_hfvvy")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0090637, 0.996894)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=572365529]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14586785, 0.14586785, 0.14586785, 1)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=746774851]
+stream = ExtResource("4_e8kgp")
+autoplay = true
