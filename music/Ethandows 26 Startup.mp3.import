@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://umem1hqnvd6b"
+path="res://.godot/imported/Ethandows 26 Startup.mp3-087b6e229481d97c5d592332cec9ab9d.mp3str"
+
+[deps]
+
+source_file="res://music/Ethandows 26 Startup.mp3"
+dest_files=["res://.godot/imported/Ethandows 26 Startup.mp3-087b6e229481d97c5d592332cec9ab9d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

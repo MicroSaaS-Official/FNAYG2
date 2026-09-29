@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://nqgdx4uxkjbv"
+path="res://.godot/imported/Distribution Center.mp3-89834790ba1de344a09481446b85398e.mp3str"
+
+[deps]
+
+source_file="res://music/Distribution Center.mp3"
+dest_files=["res://.godot/imported/Distribution Center.mp3-89834790ba1de344a09481446b85398e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
