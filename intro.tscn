@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dalxivd8k58yc"]
+
+[ext_resource type="Script" uid="uid://6wtg13k0wffg" path="res://scripts/intro.gd" id="1_7a8ye"]
+[ext_resource type="FontFile" uid="uid://5lrhhmtajmbk" path="res://assets/ProFontWindows.ttf" id="1_ayt76"]
+[ext_resource type="Shader" uid="uid://dhhjumbbvi4mb" path="res://assets/TITLE2.gdshader" id="2_7a8ye"]
+[ext_resource type="AudioStream" uid="uid://ot7suiolkwqy" path="res://music/Intro.mp3" id="4_0a7ni"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0a7ni"]
+shader = ExtResource("2_7a8ye")
+shader_parameter/scanlines_1 = 500.0
+shader_parameter/scanlines_2 = 25.0
+shader_parameter/scan_reduction = 0.1
+shader_parameter/vinnette_alpla = 1.0
+shader_parameter/vinnette_inner_radius = 0.0
+shader_parameter/vinnette_outer_radius = 1.0
+
+[node name="Intro" type="Control" unique_id=1510096345]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7a8ye")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1293256916]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14586785, 0.14586785, 0.14586785, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1084260011]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -23.5
+offset_right = 115.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_ayt76")
+theme_override_font_sizes/font_size = 46
+text = "Intro Text"
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=1776413397]
+material = SubResource("ShaderMaterial_0a7ni")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="IntroBGM" type="AudioStreamPlayer" parent="." unique_id=2120715044]
+stream = ExtResource("4_0a7ni")
+volume_db = -3.2

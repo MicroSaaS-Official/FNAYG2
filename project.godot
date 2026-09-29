@@ -13,10 +13,17 @@ config_version=5
 config/name="Friday Nights at Youth Group's 2: Nightmare Location"
 run/main_scene="uid://c17wd5aw2umgp"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/show_image=false
+boot_splash/use_filter=false
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*uid://b321wcwo7na7k"
 
 [display]
 
+window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
