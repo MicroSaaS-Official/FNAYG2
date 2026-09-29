@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://c17wd5aw2umgp"]
+
+[ext_resource type="FontFile" uid="uid://5lrhhmtajmbk" path="res://assets/ProFontWindows.ttf" id="1_bd6lo"]
+[ext_resource type="Script" uid="uid://bgvgcemea4vyk" path="res://scripts/title.gd" id="1_ndwfu"]
+[ext_resource type="Shader" uid="uid://cu35y7yprewbp" path="res://assets/TITLE.gdshader" id="3_hfvvy"]
+[ext_resource type="Shader" uid="uid://dhhjumbbvi4mb" path="res://assets/TITLE2.gdshader" id="3_kb51g"]
+[ext_resource type="AudioStream" uid="uid://4dnqk6b0w1mp" path="res://music/Title Screen.mp3" id="5_7o1oq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hfvvy"]
+shader = ExtResource("3_kb51g")
+shader_parameter/scanlines_1 = 500.0
+shader_parameter/scanlines_2 = 25.0
+shader_parameter/scan_reduction = 0.1
+shader_parameter/vinnette_alpla = 1.0
+shader_parameter/vinnette_inner_radius = 0.0
+shader_parameter/vinnette_outer_radius = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ndwfu"]
+shader = ExtResource("3_hfvvy")
+shader_parameter/vhs_resolution = Vector2(320, 240)
+shader_parameter/samples = 2
+shader_parameter/crease_noise = 1.0
+shader_parameter/crease_opacity = 0.5
+shader_parameter/filter_intensity = 0.1
+shader_parameter/tape_crease_smear = 0.2
+shader_parameter/tape_crease_intensity = 0.2
+shader_parameter/tape_crease_jitter = 0.1
+shader_parameter/tape_crease_speed = 0.5
+shader_parameter/tape_crease_discoloration = 1.0
+shader_parameter/bottom_border_thickness = 6.0
+shader_parameter/bottom_border_jitter = 6.0
+shader_parameter/noise_intensity = 0.1
+
+[node name="Control" type="Control" unique_id=1676533045]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ndwfu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=572365529]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14586785, 0.14586785, 0.14586785, 1)
+
+[node name="laBEL" type="Label" parent="." unique_id=60910366]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 53.0
+offset_right = 364.0
+offset_bottom = 250.0
+theme_override_fonts/font = ExtResource("1_bd6lo")
+theme_override_font_sizes/font_size = 46
+text = "Friday
+Nights
+at
+Youth Group's
+2: Nightmare Location
+
+>> Continue
+   New Game"
+
+[node name="Label" type="Label" parent="." unique_id=1416367092]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -115.0
+offset_top = -47.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_bd6lo")
+theme_override_font_sizes/font_size = 46
+text = "©2026"
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=268337433]
+material = SubResource("ShaderMaterial_hfvvy")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1521591335]
+visible = false
+material = SubResource("ShaderMaterial_ndwfu")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1205528723]
+stream = ExtResource("5_7o1oq")
+volume_db = -0.175
