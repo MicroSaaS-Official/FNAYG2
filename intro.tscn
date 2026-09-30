@@ -48,6 +48,7 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_ayt76")
 theme_override_font_sizes/font_size = 46
 text = "Intro Text"
+horizontal_alignment = 1
 
 [node name="ColorRect3" type="ColorRect" parent="." unique_id=1776413397]
 material = SubResource("ShaderMaterial_0a7ni")

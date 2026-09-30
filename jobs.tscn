@@ -1,0 +1,254 @@
+[gd_scene format=3 uid="uid://c0i01ln421vht"]
+
+[ext_resource type="Script" uid="uid://bxcufrdny14io" path="res://scripts/jobs-ui.gd" id="1_oa7b7"]
+[ext_resource type="FontFile" uid="uid://5lrhhmtajmbk" path="res://assets/ProFontWindows.ttf" id="2_llfee"]
+[ext_resource type="Shader" uid="uid://dhhjumbbvi4mb" path="res://assets/TITLE2.gdshader" id="3_w0ffe"]
+[ext_resource type="Script" uid="uid://b8lox523b2egy" path="res://scripts/randomuibuttonyouwillprobablynevertouchthiscodeagain.gd" id="4_hv6jo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0a7ni"]
+shader = ExtResource("3_w0ffe")
+shader_parameter/scanlines_1 = 500.0
+shader_parameter/scanlines_2 = 25.0
+shader_parameter/scan_reduction = 0.1
+shader_parameter/vinnette_alpla = 1.0
+shader_parameter/vinnette_inner_radius = 0.0
+shader_parameter/vinnette_outer_radius = 1.0
+
+[node name="Jobs" type="Control" unique_id=1510096345]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oa7b7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1293256916]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14586785, 0.14586785, 0.14586785, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1084260011]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -46.0
+offset_right = 46.0
+offset_bottom = 47.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_llfee")
+theme_override_font_sizes/font_size = 46
+text = "Jobs"
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=1776413397]
+material = SubResource("ShaderMaterial_0a7ni")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1118967071]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -354.5
+offset_top = -198.5
+offset_right = 354.5
+offset_bottom = 198.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=120214225]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=442717070]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_llfee")
+theme_override_font_sizes/font_size = 28
+text = " The All New: 
+Youth Pizzeria"
+horizontal_alignment = 1
+
+[node name="11" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1658627749]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_llfee")
+theme_override_font_sizes/font_size = 46
+text = "Night 1"
+
+[node name="12" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=781324742]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_llfee")
+theme_override_font_sizes/font_size = 46
+text = "Night 2"
+
+[node name="13" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1358205771]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_llfee")
+theme_override_font_sizes/font_size = 46
+text = "Night 3"
+
+[node name="14" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=220056413]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_llfee")
+theme_override_font_sizes/font_size = 46
+text = "Night 4"
+
+[node name="15" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=279166184]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_llfee")
+theme_override_font_sizes/font_size = 46
+text = "Night 5"
+
+[node name="VBoxContainer9" type="VBoxContainer" parent="HBoxContainer" unique_id=1893207778]
+layout_mode = 2
+
+[node name="VBoxContainer10" type="VBoxContainer" parent="HBoxContainer" unique_id=1148690152]
+layout_mode = 2
+
+[node name="VBoxContainer11" type="VBoxContainer" parent="HBoxContainer" unique_id=1899435285]
+layout_mode = 2
+
+[node name="VBoxContainer12" type="VBoxContainer" parent="HBoxContainer" unique_id=892959685]
+layout_mode = 2
+
+[node name="VBoxContainer13" type="VBoxContainer" parent="HBoxContainer" unique_id=724074687]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer" unique_id=585153989]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=1730555713]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_llfee")
+theme_override_font_sizes/font_size = 28
+text = "Youth Pizza
+The Original!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer2" unique_id=56816358]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_llfee")
+theme_override_font_sizes/font_size = 46
+disabled = true
+text = "Night 1"
+
+[node name="Button2" type="Button" parent="HBoxContainer/VBoxContainer2" unique_id=1738534839]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_llfee")
+theme_override_font_sizes/font_size = 46
+disabled = true
+text = "Night 2"
+
+[node name="Button3" type="Button" parent="HBoxContainer/VBoxContainer2" unique_id=1809705521]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_llfee")
+theme_override_font_sizes/font_size = 46
+disabled = true
+text = "Night 3"
+
+[node name="Button4" type="Button" parent="HBoxContainer/VBoxContainer2" unique_id=1587244867]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_llfee")
+theme_override_font_sizes/font_size = 46
+disabled = true
+text = "Night 4"
+
+[node name="Button5" type="Button" parent="HBoxContainer/VBoxContainer2" unique_id=1318938787]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_llfee")
+theme_override_font_sizes/font_size = 46
+disabled = true
+text = "Night 5"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="HBoxContainer" unique_id=1405908199]
+layout_mode = 2
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="HBoxContainer" unique_id=187837116]
+layout_mode = 2
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="HBoxContainer" unique_id=374268782]
+layout_mode = 2
+
+[node name="VBoxContainer7" type="VBoxContainer" parent="HBoxContainer" unique_id=535425670]
+layout_mode = 2
+
+[node name="VBoxContainer8" type="VBoxContainer" parent="HBoxContainer" unique_id=1429461380]
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer" unique_id=573209357]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer3" unique_id=40073980]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_llfee")
+theme_override_font_sizes/font_size = 28
+text = "Error:
+Not Found"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer3" unique_id=1882045736]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_llfee")
+theme_override_font_sizes/font_size = 46
+disabled = true
+text = "Night 1"
+
+[node name="Button2" type="Button" parent="HBoxContainer/VBoxContainer3" unique_id=1234652882]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_llfee")
+theme_override_font_sizes/font_size = 46
+disabled = true
+text = "Night 2"
+
+[node name="Button3" type="Button" parent="HBoxContainer/VBoxContainer3" unique_id=1260797479]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_llfee")
+theme_override_font_sizes/font_size = 46
+disabled = true
+text = "Night 3"
+
+[node name="Button4" type="Button" parent="HBoxContainer/VBoxContainer3" unique_id=1120163115]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_llfee")
+theme_override_font_sizes/font_size = 46
+disabled = true
+text = "Night 4"
+
+[node name="Button5" type="Button" parent="HBoxContainer/VBoxContainer3" unique_id=431159083]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_llfee")
+theme_override_font_sizes/font_size = 46
+disabled = true
+text = "Night 5"
+
+[node name="Sign Out" type="Button" parent="." unique_id=1467991665]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -55.0
+offset_right = 169.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_llfee")
+theme_override_font_sizes/font_size = 46
+text = "Sign Out"
+script = ExtResource("4_hv6jo")
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/11" to="." method="_on_11_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/12" to="." method="_on_12_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/13" to="." method="_on_13_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/14" to="." method="_on_14_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/15" to="." method="_on_15_pressed"]
+[connection signal="pressed" from="Sign Out" to="Sign Out" method="_on_pressed"]

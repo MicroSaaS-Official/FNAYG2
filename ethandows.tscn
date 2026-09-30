@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dypl2xr1vbea4"]
 
+[ext_resource type="Script" uid="uid://d10ystlnhljsk" path="res://scripts/ethandows.gd" id="1_lnvl1"]
+[ext_resource type="PackedScene" uid="uid://c0i01ln421vht" path="res://jobs.tscn" id="2_52q4t"]
 [ext_resource type="Texture2D" uid="uid://b3fh44mlx54fo" path="res://assets/62DE.png" id="3_e8kgp"]
 [ext_resource type="Shader" uid="uid://dhhjumbbvi4mb" path="res://assets/TITLE2.gdshader" id="3_ts42v"]
 [ext_resource type="Shader" uid="uid://cu35y7yprewbp" path="res://assets/TITLE.gdshader" id="4_8i251"]
@@ -37,6 +39,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_lnvl1")
+next_scene = ExtResource("2_52q4t")
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=88246130]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.039215688, 0.56078434, 0.83137256, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=1521591335]
 visible = false
@@ -50,6 +63,14 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1101867370]
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=757195190]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.039215688, 0.56078434, 0.83137256, 1)
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=291619420]
 offset_right = 1280.0
@@ -85,4 +106,14 @@ color = Color(0.14586785, 0.14586785, 0.14586785, 1)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=746774851]
 stream = ExtResource("4_e8kgp")
-autoplay = true
+
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=300771731]
+material = SubResource("ShaderMaterial_hfvvy")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0090637, 0.996894)
+color = Color(0, 0, 0, 1)
