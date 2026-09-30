@@ -9,3 +9,6 @@ var destinationtext = "none"
 # and set the destinationtext as the full name for the area
 # do not use the destination "error" or it will not transport you
 # you may use it if it's an error handler
+
+var is_player_near_computer: bool = false
+var current_night = 0

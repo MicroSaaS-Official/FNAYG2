@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://5l7mrwsethe1"]
+
+[ext_resource type="PackedScene" uid="uid://bc3a7g5ocbi2c" path="res://jakobanimatronic.tscn" id="1_5pqmh"]
+[ext_resource type="AudioStream" uid="uid://dcn2034swny6v" path="res://assets/jumpscarejaob.mp3" id="2_lc2xj"]
+
+[sub_resource type="Environment" id="Environment_8v58w"]
+background_mode = 1
+
+[node name="jakob jumpscare" type="Node3D" unique_id=1160325995]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2134768931]
+environment = SubResource("Environment_8v58w")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=33051857]
+transform = Transform3D(1, 0, 0, 0, 0.8825802, -0.47016194, 0, 0.47016194, 0.8825802, 0, 0, 0.11160958)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D" unique_id=1387803626]
+light_energy = 3.693
+spot_range = 30.607
+
+[node name="Jakobanimatronic" parent="." unique_id=73307158 instance=ExtResource("1_5pqmh")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.6100094, -1.0519383)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=582357194]
+stream = ExtResource("2_lc2xj")
+autoplay = true

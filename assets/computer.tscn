@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bgfdrebr25el5"]
 
 [ext_resource type="Texture2D" uid="uid://y128c47pgipn" path="res://assets/TEXTURE.png" id="1_4dp6j"]
-[ext_resource type="PackedScene" uid="uid://dypl2xr1vbea4" path="res://ethandows.tscn" id="2_h4ipl"]
+[ext_resource type="Script" uid="uid://cprp66h8db4pq" path="res://scripts/use_area.gd" id="3_jccxw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8v58w"]
 albedo_texture = ExtResource("1_4dp6j")
@@ -13,6 +13,9 @@ viewport_path = NodePath("SubViewport")
 resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_qmwgw")
 uv2_scale = Vector3(-1, -1, -1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8v58w"]
+size = Vector3(2.5197754, 2.6079102, 3.2329102)
 
 [node name="Computer" type="Node3D" unique_id=2421823]
 
@@ -53,4 +56,20 @@ material = SubResource("StandardMaterial3D_4dp6j")
 [node name="SubViewport" type="SubViewport" parent="." unique_id=769328316]
 size = Vector2i(1152, 720)
 
-[node name="Control" parent="SubViewport" unique_id=1676533045 instance=ExtResource("2_h4ipl")]
+[node name="ColorRect" type="ColorRect" parent="SubViewport" unique_id=1745738319]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="UseArea" type="Area3D" parent="." unique_id=1080372181]
+script = ExtResource("3_jccxw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="UseArea" unique_id=397361652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8039551, 1.1164551)
+shape = SubResource("BoxShape3D_8v58w")
+
+[connection signal="body_entered" from="UseArea" to="UseArea" method="_on_body_entered"]
+[connection signal="body_exited" from="UseArea" to="UseArea" method="_on_body_exited"]

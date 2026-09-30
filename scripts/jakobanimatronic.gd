@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @export var speed: float = 4.0
 @export var player: Node3D # Drag your Player node here in the Inspector
+@export_enum("Animation", "Custom Scene") var custom_jumpscare_mode: int = 0 # Set to 1 for custom scene switch
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var anim_player: AnimationPlayer = $'Mutant Run'/AnimationPlayer # Adjust path if inside child GLB node
@@ -16,8 +17,13 @@ func _ready() -> void:
 
 func setup_navigation() -> void:
 	await get_tree().physics_frame
-	if player:
-		nav_agent.target_position = player.global_position
+	
+	# If no player is assigned, trigger instant jumpscare
+	if not player:
+		trigger_jumpscare()
+		return
+		
+	nav_agent.target_position = player.global_position
 
 func _physics_process(_delta: float) -> void:
 	if not player or is_jumpscaring:
@@ -53,11 +59,24 @@ func _on_jumpscare_area_body_entered(body: Node3D) -> void:
 		trigger_jumpscare()
 
 func trigger_jumpscare() -> void:
+	if is_jumpscaring:
+		return
+		
 	is_jumpscaring = true
 	velocity = Vector3.ZERO
 	
-	# Play jumpscare animation
+	print("GAME OVER: Jumpscare Triggered!")
+	
+	# Mode 1: Transfer straight to the custom jumpscare scene
+	if custom_jumpscare_mode == 1:
+		get_tree().change_scene_to_file("res://assets/models/jakob_jumpscare.tscn")
+		return
+
+	# Mode 0: Play animation, wait for finish, and switch to TITLE.tscn
 	if anim_player.has_animation(JUMPSCARE_ANIMATION):
 		anim_player.play(JUMPSCARE_ANIMATION)
-	
-	print("GAME OVER: Jumpscare Triggered!")
+		await anim_player.animation_finished
+	else:
+		await get_tree().create_timer(1.0).timeout
+		
+	get_tree().change_scene_to_file("res://TITLE.tscn")
